@@ -1,4 +1,7 @@
+package task1
+
 import play.api.libs.json.{Json, OWrites}
+import xlsx2node.Node
 
 object JsonConverter {
   def convert(nodes: List[Node]): String = {
