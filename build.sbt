@@ -1,4 +1,4 @@
-name := "crestt-task"
+name := "crestt-task1"
 
 version := "0.1"
 

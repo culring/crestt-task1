@@ -1,3 +1,3 @@
 package xlsx2node
 
-case class Node(Id: Int, name: String, nodes: List[Node])
+case class Node(Id: Int, name: String, children: List[Node])

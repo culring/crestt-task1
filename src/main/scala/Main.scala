@@ -1,5 +1,3 @@
-package task1
-
 import xlsx2node.Xlsx2NodeParser
 
 object Main extends App {
