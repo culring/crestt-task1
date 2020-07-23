@@ -1,4 +1,4 @@
-import xlsx2node.Xlsx2NodeParser
+import xlsx2node.{Row, Xlsx2NodeParser}
 
 object Main extends App {
   val inputStream = getClass.getResourceAsStream("/Scala_zadanie.xlsx")

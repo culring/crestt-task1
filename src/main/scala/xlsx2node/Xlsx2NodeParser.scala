@@ -16,7 +16,7 @@ object Xlsx2NodeParser {
     parseToNodes(parsedRows)
   }
 
-  def readXlsx(inputStream: InputStream): List[List[Option[String]]] = {
+  private def readXlsx(inputStream: InputStream): List[List[Option[String]]] = {
     val workbook = WorkbookFactory.create(inputStream)
     val sheet = workbook.getSheetAt(0)
     val formatter = new DataFormatter()
@@ -31,7 +31,7 @@ object Xlsx2NodeParser {
     rows.toList
   }
 
-  def parseToRows(rows: List[List[Option[String]]]): List[Row] = {
+  private def parseToRows(rows: List[List[Option[String]]]): List[Row] = {
     for(row <- rows) yield {
       val Id = row(3).get.toInt
       val level = extractLevelFromRow(row)
@@ -50,7 +50,7 @@ object Xlsx2NodeParser {
     index+1
   }
 
-  def parseToNodes(rows: List[Row]): List[Node] = {
+  private def parseToNodes(rows: List[Row]): List[Node] = {
     def getChildren(siblingsLevel: Int, rows: List[Row], siblings: List[Node]): (List[Node], List[Row]) = {
       if(rows.isEmpty || siblingsLevel > NUMBER_OF_LEVELS) {
         return (siblings, rows)
